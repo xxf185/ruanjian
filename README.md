@@ -123,3 +123,5 @@ https://raw.githubusercontent.com/xxf185/ruanjian/main/wireguard
 https://raw.githubusercontent.com/xxf185/ruanjian/main/x-ui
 
 https://raw.githubusercontent.com/xxf185/ruanjian/main/youtube
+
+https://raw.githubusercontent.com/xxf185/ruanjian/main/xray
