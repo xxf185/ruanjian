@@ -47,9 +47,9 @@ cd xxxxx
 
 4.删除指定定文件（删除仓库中名为的xxxxx文件）
 
-git rm xxxxx
+git rm 要删除的文件名
 
-git rm -r xxxxx
+git rm -r 要删除的文件夹名
 
 5.提交操作说明
 
