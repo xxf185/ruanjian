@@ -96,16 +96,6 @@ ashcraftbartlett057337@gmail.com
 
 更改端口 v2ray port tls auto——xray port tls auto
 
-永久删除无人值守升级
-
-sudo rm /var/chche/apt/archives/lock
-
-sudo rm /var/lib/dpkg/lock-frontend //注意自己无法获得锁的路径
-
-sudo apt install -y gcc nasm
-
-apt remove unattended-upgrades
-
 Centos/Debian系统80端口被占用
 
 netstat -lnpt
