@@ -8,7 +8,7 @@ git add .
 
 git commit -m “xxf”
 
-git remote add origin https://github.com/xxf185/xxxxx.git
+git remote add origin git@github.com:xxf185/xxxxx.git
 
 git push -u origin master
 
