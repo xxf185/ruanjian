@@ -110,3 +110,16 @@ netstat -lnpt|grep 443
 
 kill -s 9 xxxx
 
+https://raw.githubusercontent.com/xxf185/ruanjian/main/dsj
+
+https://raw.githubusercontent.com/xxf185/ruanjian/main/kuwo
+
+https://raw.githubusercontent.com/xxf185/ruanjian/main/openvpn
+
+https://raw.githubusercontent.com/xxf185/ruanjian/main/v2ray
+
+https://raw.githubusercontent.com/xxf185/ruanjian/main/wireguard
+
+https://raw.githubusercontent.com/xxf185/ruanjian/main/x-ui
+
+https://raw.githubusercontent.com/xxf185/ruanjian/main/youtube
