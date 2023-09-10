@@ -72,6 +72,7 @@ bash <(curl -Ls https://gitlab.com/rwkgyg/x-ui-yg/raw/main/install.sh)
 
 wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh aapanel
 
+--------------------------------------------------------------------------------
 api令牌
 
 20f0ff7794cbcec1ee99736ddfdd9aa2105c6
@@ -95,6 +96,8 @@ ashcraftbartlett057337@gmail.com
 添加配置 v2ray add ws——xray add ws
 
 更改端口 v2ray port tls auto——xray port tls auto
+
+--------------------------------------------------------------------------------
 
 Centos/Debian系统80端口被占用
 
