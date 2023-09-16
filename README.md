@@ -43,7 +43,9 @@ apt-get update -y && apt-get install curl -y
 centos 系统安装 curl 方法:
 
 yum update -y && yum install curl -y
+--------------------------------------------------------------------------------
 
+--------------------------------------------------------------------------------
 1：curl命令
 
 apt-get update -y && apt-get install curl -y
@@ -73,6 +75,7 @@ bash <(curl -Ls https://gitlab.com/rwkgyg/x-ui-yg/raw/main/install.sh)
 wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh aapanel
 
 --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 api令牌
 
 20f0ff7794cbcec1ee99736ddfdd9aa2105c6
@@ -97,6 +100,56 @@ ashcraftbartlett057337@gmail.com
 
 更改端口 v2ray port tls auto——xray port tls auto
 
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+官方定义reality域名的目标网站最低标准：国外网站 、支持 TLSv1.3 、X25519 与 H2
+
+在网上随便找了些：
+
+gateway.icloud.com
+
+itunes.apple.com
+
+download-installer.cdn.mozilla.net
+
+addons.mozilla.org
+
+www.microsoft.com
+
+www.lovelive-anime.jp
+
+swdist.apple.com
+
+swcdn.apple.com
+
+updates.cdn-apple.com
+
+mensura.cdn-apple.com
+
+osxapps.itunes.apple.com
+
+aod.itunes.apple.com
+
+cdn-dynmedia-1.microsoft.com
+
+update.microsoft
+
+software.download.prss.microsoft.com
+
+s0.awsstatic.com
+
+d1.awsstatic.com
+
+images-na.ssl-images-amazon.com
+
+m.media-amazon.com
+
+player.live-video.net
+
+dl.google.com
+
+www.yahoo.com
+--------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 Centos/Debian系统80端口被占用
