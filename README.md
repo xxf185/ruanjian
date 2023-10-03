@@ -81,8 +81,6 @@ bash <(curl -Ls https://gitlab.com/rwkgyg/x-ui-yg/raw/main/install.sh)
 wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh aapanel
 
 
-
-wget https://github.com/xxf185/Xray/archive/main.tar.gz -O Xray-main.tar.gz;tar -zxvf Xray-main.tar.gz;cd Xray-main;chmod +x i*;./i* -l
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -110,54 +108,6 @@ ashcraftbartlett057337@gmail.com
 
 更改端口 v2ray port tls auto——xray port tls auto
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-官方定义reality域名的目标网站最低标准：国外网站 、支持 TLSv1.3 、X25519 与 H2
-
-gateway.icloud.com
-
-itunes.apple.com
-
-download-installer.cdn.mozilla.net
-
-addons.mozilla.org
-
-www.microsoft.com
-
-www.lovelive-anime.jp
-
-swdist.apple.com
-
-swcdn.apple.com
-
-updates.cdn-apple.com
-
-mensura.cdn-apple.com
-
-osxapps.itunes.apple.com
-
-aod.itunes.apple.com
-
-cdn-dynmedia-1.microsoft.com
-
-update.microsoft
-
-software.download.prss.microsoft.com
-
-s0.awsstatic.com
-
-d1.awsstatic.com
-
-images-na.ssl-images-amazon.com
-
-m.media-amazon.com
-
-player.live-video.net
-
-dl.google.com
-
-www.yahoo.com
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -174,26 +124,10 @@ netstat -lnpt|grep 80
 
 netstat -lnpt|grep 443
 
-kill -s 9 xxxx
-
-
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-https://raw.githubusercontent.com/xxf185/ruanjian/main/dsj
-
-https://raw.githubusercontent.com/xxf185/ruanjian/main/kuwo
-
-https://raw.githubusercontent.com/xxf185/ruanjian/main/openvpn
-
-https://raw.githubusercontent.com/xxf185/ruanjian/main/v2ray
-
-https://raw.githubusercontent.com/xxf185/ruanjian/main/wireguard
-
-https://raw.githubusercontent.com/xxf185/ruanjian/main/x-ui
-
-https://raw.githubusercontent.com/xxf185/ruanjian/main/youtube
-
-https://raw.githubusercontent.com/xxf185/ruanjian/main/xray
+kill -s 9 xxx
 ```
+
+
+
+
+
