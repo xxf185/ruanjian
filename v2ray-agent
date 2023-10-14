@@ -5554,6 +5554,7 @@ aliasInstall() {
             rm -rf "$HOME/install.sh"
         fi
         if [[ "${xxfType}" == "true" ]]; then
+	    echoContent green
             echoContent green "快捷方式创建成功，可执行[xxf]重新打开脚本"
         fi
     fi
