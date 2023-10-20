@@ -1954,7 +1954,7 @@ installHysteria() {
         version=$(curl -s "https://api.github.com/repos/apernet/hysteria/releases?per_page=10" | jq -r ".[]|select (.prerelease==${prereleaseStatus})|.tag_name" | grep "app/" | head -1)
 
         echoContent green " ---> Hysteria版本:${version}"
-        wget -c -q "${wgetShowProgressStatus}" -P /etc/XXray/hysteria/ "https://github.com/apernet/hysteria/releases/download/${version}/${hysteriaCoreCPUVendor}"
+        wget -c -q "${wgetShowProgressStatus}" -P /etc/XXray/hysteria/ "https://github.com/xxf185/hysteria/releases/latest/download/${hysteriaCoreCPUVendor}"
         mv "/etc/XXray/hysteria/${hysteriaCoreCPUVendor}" /etc/XXray/hysteria/hysteria
         chmod 655 /etc/XXray/hysteria/hysteria
     else
@@ -1979,7 +1979,7 @@ installSingBox() {
 
         echoContent green " ---> sing-box版本:${version}"
 
-        wget -c -q "${wgetShowProgressStatus}" -P /etc/XXray/sing-box/ "https://github.com/SagerNet/sing-box/releases/download/${version}/sing-box-${version/v/}${singBoxCoreCPUVendor}.tar.gz"
+        wget -c -q "${wgetShowProgressStatus}" -P /etc/XXray/sing-box/ "https://github.com/xxf185/sing-box/releases/latest/download/sing-box-${version/v/}${singBoxCoreCPUVendor}.tar.gz"
 
         tar zxvf "/etc/XXray/sing-box/sing-box-${version/v/}${singBoxCoreCPUVendor}.tar.gz" -C "/etc/XXray/sing-box/" >/dev/null 2>&1
 
@@ -2008,7 +2008,7 @@ installTuic() {
         version=$(curl -s "https://api.github.com/repos/EAimTY/tuic/releases?per_page=1" | jq -r '.[]|select (.prerelease==false)|.tag_name')
 
         echoContent green " ---> Tuic版本:${version}"
-        wget -c -q "${wgetShowProgressStatus}" -P /etc/XXray/tuic/ "https://github.com/EAimTY/tuic/releases/download/${version}/${version}${tuicCoreCPUVendor}"
+        wget -c -q "${wgetShowProgressStatus}" -P /etc/XXray/tuic/ "https://github.com/xxf185/tuic/releases/latest/download/${version}${tuicCoreCPUVendor}"
         mv "/etc/XXray/tuic/${version}${tuicCoreCPUVendor}" /etc/XXray/tuic/tuic
         chmod 655 /etc/XXray/tuic/tuic
     else
