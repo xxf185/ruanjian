@@ -699,62 +699,62 @@ showInstallStatus() {
     if [[ -n "${coreInstallType}" ]]; then
         if [[ "${coreInstallType}" == 1 ]]; then
             if [[ -n $(pgrep -f "xray/xray") ]]; then
-                echoContent white "\n核心: Xray-core[运行中]"
+                echoContent skyBlue "\n核心: Xray-core[运行中]"
             else
-                echoContent white "\n核心: Xray-core[未运行]"
+                echoContent skyBlue "\n核心: Xray-core[未运行]"
             fi
 
         elif [[ "${coreInstallType}" == 2 || "${coreInstallType}" == 3 ]]; then
             if [[ -n $(pgrep -f "v2ray/v2ray") ]]; then
-                echoContent white "\n核心: v2ray-core[运行中]"
+                echoContent skyBlue "\n核心: v2ray-core[运行中]"
             else
-                echoContent white "\n核心: v2ray-core[未运行]"
+                echoContent skyBlue "\n核心: v2ray-core[未运行]"
             fi
         fi
         # 读取协议类型
         readInstallProtocolType
 
         if [[ -n ${currentInstallProtocolType} ]]; then
-            echoContent white "已安装协议: \c"
+            echoContent skyBlue "已安装协议: \c"
         fi
         if echo ${currentInstallProtocolType} | grep -q 0; then
             if [[ "${coreInstallType}" == 2 ]]; then
-                echoContent white "VLESS+TCP[TLS] \c"
+                echoContent skyBlue "VLESS+TCP[TLS] \c"
             else
-                echoContent white "VLESS+TCP[TLS_Vision] \c"
+                echoContent skyBlue "VLESS+TCP[TLS_Vision] \c"
             fi
         fi
 
         if echo ${currentInstallProtocolType} | grep -q trojan; then
             if [[ "${coreInstallType}" == 1 ]]; then
-                echoContent white "Trojan+TCP[TLS_Vision] \c"
+                echoContent skyBlue "Trojan+TCP[TLS_Vision] \c"
             fi
         fi
 
         if echo ${currentInstallProtocolType} | grep -q 1; then
-            echoContent white "VLESS+WS[TLS] \c"
+            echoContent skyBlue "VLESS+WS[TLS] \c"
         fi
 
         if echo ${currentInstallProtocolType} | grep -q 2; then
-            echoContent white "Trojan+gRPC[TLS] \c"
+            echoContent skyBlue "Trojan+gRPC[TLS] \c"
         fi
 
         if echo ${currentInstallProtocolType} | grep -q 3; then
-            echoContent white "VMess+WS[TLS] \c"
+            echoContent skyBlue "VMess+WS[TLS] \c"
         fi
 
         if echo ${currentInstallProtocolType} | grep -q 4; then
-            echoContent white "Trojan+TCP[TLS] \c"
+            echoContent skyBlue "Trojan+TCP[TLS] \c"
         fi
 
         if echo ${currentInstallProtocolType} | grep -q 5; then
-            echoContent white "VLESS+gRPC[TLS] \c"
+            echoContent skyBlue "VLESS+gRPC[TLS] \c"
         fi
         if echo ${currentInstallProtocolType} | grep -q 7; then
-            echoContent white "VLESS+Reality+Vision \c"
+            echoContent skyBlue "VLESS+Reality+Vision \c"
         fi
         if echo ${currentInstallProtocolType} | grep -q 8; then
-            echoContent white "VLESS+Reality+gRPC \c"
+            echoContent skyBlue "VLESS+Reality+gRPC \c"
         fi
     fi
 }
