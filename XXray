@@ -1956,7 +1956,7 @@ installHysteria() {
 
     if [[ -z "${hysteriaConfigPath}" ]]; then
 
-        version=$(curl -s "https://api.github.com/repos/apernet/hysteria/releases?per_page=10" | jq -r ".[]|select (.prerelease==${prereleaseStatus})|.tag_name" | grep "app/" | head -1)
+        version=$(curl -s "https://api.github.com/repos/xxf185/hysteria/releases?per_page=10" | jq -r ".[]|select (.prerelease==${prereleaseStatus})|.tag_name" | grep "app/" | head -1)
 
         echoContent green " ---> Hysteria版本:${version}"
         wget -c -q "${wgetShowProgressStatus}" -P /etc/XXray/hysteria/ "https://github.com/xxf185/hysteria/releases/latest/download/${hysteriaCoreCPUVendor}"
@@ -1980,7 +1980,7 @@ installSingBox() {
 
     if [[ -z "${singBoxConfigPath}" ]]; then
 
-        version=$(curl -s "https://api.github.com/repos/SagerNet/sing-box/releases?per_page=10" | jq -r ".[]|select (.prerelease==${prereleaseStatus})|.tag_name" | head -1)
+        version=$(curl -s "https://api.github.com/repos/xxf185/sing-box/releases?per_page=10" | jq -r ".[]|select (.prerelease==${prereleaseStatus})|.tag_name" | head -1)
 
         echoContent green " ---> sing-box版本:${version}"
 
@@ -2010,7 +2010,7 @@ installTuic() {
 
     if [[ -z "${tuicConfigPath}" ]]; then
 
-        version=$(curl -s "https://api.github.com/repos/EAimTY/tuic/releases?per_page=1" | jq -r '.[]|select (.prerelease==false)|.tag_name')
+        version=$(curl -s "https://api.github.com/repos/xxf185/tuic/releases?per_page=1" | jq -r '.[]|select (.prerelease==false)|.tag_name')
 
         echoContent green " ---> Tuic版本:${version}"
         wget -c -q "${wgetShowProgressStatus}" -P /etc/XXray/tuic/ "https://github.com/xxf185/tuic/releases/latest/download/${version}${tuicCoreCPUVendor}"
@@ -2423,7 +2423,7 @@ EOF
 #        cat <<EOF >/etc/systemd/system/tuic.service
 #[Unit]
 #Description=Tuic Service
-#Documentation=https://github.com/EAimTY
+#Documentation=https://github.com/xxf185
 #After=network.target nss-lookup.target
 #[Service]
 #User=root
@@ -8269,4 +8269,3 @@ menu() {
 }
 cronFunction
 menu
-
