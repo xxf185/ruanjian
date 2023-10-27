@@ -7685,7 +7685,7 @@ subscribe() {
                 fi
                 echoContent skyBlue "\n----------默认订阅----------\n"
                 echoContent green "email:${email}\n"
-                echoContent yellow "url:https://${currentDomain}/s/default/${emailMd5}\n"
+                echoContent yellow "https://${currentDomain}/s/default/${emailMd5}\n"
                 echoContent yellow "在线二维码:https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://${currentDomain}/s/default/${emailMd5}\n"
                 echo "https://${currentDomain}/s/default/${emailMd5}" | qrencode -s 10 -m 1 -t UTF8
 
@@ -7709,7 +7709,7 @@ subscribe() {
                     local clashProxyUrl="https://${currentDomain}/s/clashMeta/${emailMd5}"
                     clashMetaConfig "${clashProxyUrl}" "${emailMd5}"
                     echoContent skyBlue "\n----------clashMeta订阅----------\n"
-                    echoContent yellow "url:https://${currentDomain}/s/clashMetaProfiles/${emailMd5}\n"
+                    echoContent yellow "https://${currentDomain}/s/clashMetaProfiles/${emailMd5}\n"
                     echoContent yellow "在线二维码:https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://${currentDomain}/s/clashMetaProfiles/${emailMd5}\n"
                     echo "https://${currentDomain}/s/clashMetaProfiles/${emailMd5}" | qrencode -s 10 -m 1 -t UTF8
                 fi
