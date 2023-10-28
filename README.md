@@ -1,9 +1,9 @@
 ```
-cloudcone——23.234.240.118——c.xxf185.asia
+cloudcone——74.48.159.224——c.xxf185.asia
 
 racknerd-a——148.135.32.102——ra.xxf185.asia
 
-racknerd-b——192.227.231.203——rb.xxf185.asia
+racknerd-b——192.227.231.203——r2.xxf185.asia
 
 美国5M——38.181.44.23——us.xxf185.asia
 
