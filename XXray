@@ -6057,13 +6057,13 @@ warpRoutingReg() {
         echo
         echoContent yellow "# 注意事项"
         echoContent yellow "# 依赖第三方程序，请熟知其中风险"
-        echoContent yellow "# 项目地址：https://github.com/badafans/warp-reg \n"
+        echoContent yellow "# 项目地址：https://github.com/xxf185/warp-reg \n"
 
         read -r -p "warp-reg未安装，是否安装 ？[y/n]:" installWarpRegStatus
 
         if [[ "${installWarpRegStatus}" == "y" ]]; then
 
-            curl -sLo /etc/XXray/warp/warp-reg "https://github.com/badafans/warp-reg/releases/download/v1.0/${warpRegCoreCPUVendor}"
+            curl -sLo /etc/XXray/warp/warp-reg "https://github.com/xxf185/warp-reg/releases/download/v1.0/${warpRegCoreCPUVendor}"
             chmod 655 /etc/XXray/warp/warp-reg
 
         else
