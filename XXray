@@ -7083,16 +7083,13 @@ coreVersionManageMenu() {
     echoContent skyBlue "\n功能 1/1 : 请选择核心"
     echoContent red 
     echoContent yellow "1.Xray-core"
-    echoContent yellow "2.v2ray-core"
-    echoContent yellow "3.sing-box"
+    echoContent yellow "2.sing-box"
     echoContent red 
     read -r -p "请输入:" selectCore
 
     if [[ "${selectCore}" == "1" ]]; then
         xrayVersionManageMenu 1
-    elif [[ "${coreInstallType}" == "2" ]]; then
-        echoContent red " ---> 暂停维护"
-    elif [[ "${selectCore}" == "3" ]]; then
+    elif [[ "${selectCore}" == "2" ]]; then
         singBoxVersionManageMenu 1
     fi
 }
