@@ -52,6 +52,9 @@ yum update -y && yum install curl -y
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
+中文包命令
+wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/LocaleCN/master/LocaleCN.sh && bash LocaleCN.sh
+
 1：curl命令
 
 apt-get update -y && apt-get install curl -y
