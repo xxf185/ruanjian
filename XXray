@@ -3155,6 +3155,156 @@ initSingBoxTuicConfig() {
 EOF
 }
 
+# 初始化singbox route配置
+initSingBoxRouteConfig() {
+    local outboundTag=$1
+    if [[ ! -f "${singBoxConfigPath}config/${outboundTag}_route.json" ]]; then
+        cat <<EOF >"${singBoxConfigPath}config/${outboundTag}_route.json"
+{
+    "route": {
+        "geosite": {
+            "path": "${singBoxConfigPath}geosite.db",
+            "download_url": "https://github.com/xxf185/sing-geosite/releases/latest/download/geosite.db"
+        },
+        "rules": [
+            {
+                "domain": [
+                ],
+                "geosite": [
+                ],
+                "outbound": "${outboundTag}"
+            }
+        ]
+    }
+}
+EOF
+    fi
+}
+
+# sing-box 路由规则配置配置
+configurationSingBoxRoute() {
+    local type=$1
+    local outboundTag=$2
+    local content=$3
+    if [[ "${type}" == "add" ]]; then
+        addSingBoxRouteRule "${outboundTag}" "${content}"
+    elif [[ "${type}" == "delete" ]]; then
+        if [[ -f "${singBoxConfigPath}config/${outboundTag}_route.json" ]]; then
+            rm "${singBoxConfigPath}config/${outboundTag}_route.json"
+            echoContent green "\n ---> 删除成功"
+        fi
+    fi
+}
+
+# 添加sing-box路由规则
+addSingBoxRouteRule() {
+    local outboundTag=$1
+    local domainList=$2
+
+    initSingBoxRouteConfig "${outboundTag}"
+    local rules
+
+    rules=$(jq -r '.route.rules[]|select(.outbound=="'"${outboundTag}"'")' "${singBoxConfigPath}config/${outboundTag}_route.json")
+
+    while read -r line; do
+        if echo "${rules}" | grep -q "${line}"; then
+            echoContent yellow " ---> ${line}已存在，跳过"
+        else
+            if echo "${line}" | grep -q "\."; then
+                rules=$(echo "${rules}" | jq -r ".domain +=[\"${line}\"]")
+            else
+                rules=$(echo "${rules}" | jq -r ".geosite +=[\"${line}\"]")
+            fi
+        fi
+    done < <(echo "${domainList}" | tr ',' '\n')
+
+    local delRules
+    delRules=$(jq -r 'del(.route.rules[]|select(.outbound=="'"${outboundTag}"'"))' "${singBoxConfigPath}config/${outboundTag}_route.json")
+    echo "${delRules}" >"${singBoxConfigPath}config/${outboundTag}_route.json"
+
+    local routeRules
+    routeRules=$(jq -r ".route.rules += [${rules}]" "${singBoxConfigPath}config/${outboundTag}_route.json")
+    echo "${routeRules}" >"${singBoxConfigPath}config/${outboundTag}_route.json"
+}
+
+# 移除sing-box route rule
+removeSingBoxRouteRule() {
+    local outboundTag=$1
+    local delRules
+    delRules=$(jq -r 'del(.route.rules[]|select(.outbound=="'"${outboundTag}"'"))' "${singBoxConfigPath}config/${outboundTag}_route.json")
+    echo "${delRules}" >"${singBoxConfigPath}config/${outboundTag}_route.json"
+}
+
+# 添加sing-box出站
+addSingBoxOutbound() {
+    local tag=$1
+    local type="ipv4"
+    if echo "${tag}" | grep -q "IPv6"; then
+        type=ipv6
+    fi
+
+    cat <<EOF >"${singBoxConfigPath}config/${tag}.json"
+{
+     "outbounds": [
+        {
+             "type": "direct",
+             "tag": "${tag}",
+             "domain_strategy": "${type}_only"
+        }
+    ]
+}
+EOF
+}
+
+# 初始化wireguard出站信息
+addSingBoxWireGuardOut() {
+    readConfigWarpReg
+
+    cat <<EOF >"${singBoxConfigPath}config/wireguard_outbound.json"
+{
+     "outbounds": [
+        {
+             "type": "direct",
+             "tag": "wireguard-out-IPv4",
+             "detour": "wireguard-out",
+             "domain_strategy": "ipv4_only"
+        },
+        {
+             "type": "direct",
+             "tag": "wireguard-out-IPv6",
+             "detour": "wireguard-out",
+             "domain_strategy": "ipv6_only"
+        },
+        {
+            "type": "wireguard",
+            "tag": "wireguard-out",
+            "server": "162.159.192.1",
+            "server_port": 2408,
+            "local_address": [
+                "172.16.0.2/32",
+                "${addressWarpReg}/128"
+            ],
+            "private_key": "${secretKeyWarpReg}",
+            "peer_public_key": "${publicKeyWarpReg}",
+            "reserved":${reservedWarpReg},
+            "mtu": 1280
+        }
+    ]
+}
+EOF
+}
+
+# sing-box outbound配置
+configurationSingBoxOutbound() {
+    #  add remove
+    local type=$1
+    local outboundTag=$2
+    local content=$3
+    if [[ "${outboundTag}" == "" ]]; then
+        echo
+    fi
+}
+
 # 初始化sing-box socks5 出站
 initSingBoxSocks5OutboundsConfig() {
     local uuid=
