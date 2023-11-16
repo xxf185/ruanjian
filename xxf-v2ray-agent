@@ -8479,6 +8479,7 @@ menu() {
     checkWgetShowProgress
     echoContent red
     if [[ -n "${coreInstallType}" ]]; then
+        echoContent yellow
         echoContent yellow "1.重新安装"
     else
         echoContent yellow "1.安装"
