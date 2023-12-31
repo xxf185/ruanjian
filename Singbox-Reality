@@ -15,10 +15,9 @@ OS=`hostnamectl | grep -i system | cut -d: -f2`
 IP=`curl -sL -4 ip.sb`
 
 domains=(
-gateway.icloud.com
-www.microsoft.com
-mp.weixin.qq.com
-自定义域名
+one-piece.com
+www.samsung.com
+www.amd.com
 )
 
 checkSystem() {
