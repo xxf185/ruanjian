@@ -77,8 +77,8 @@ check_ip(){
 tuic_cert(){
     green "Tuic 协议证书申请方式如下："
     echo ""
-    echo -e " ${GREEN}1.${PLAIN} 脚本自动申请 ${YELLOW}（默认）${PLAIN}"
-    echo -e " ${GREEN}2.${PLAIN} 自定义证书路径"
+    echo -e " ${YELLOW}1.脚本自动申请(默认)${PLAIN}"
+    echo -e " ${YELLOW}2.自定义证书路径${PLAIN}"
     echo ""
     read -rp "请输入选项 [1-2]: " certInput
     if [[ $certInput == 2 ]]; then
@@ -254,7 +254,7 @@ Sagernet、Nekobox 与 小火箭 配置说明（以下6项必填）：
 }
 EOF
 
-    url="tuic://$uuid:$passwd@$domain:$port?congestion_control=bbr&udp_relay_mode=quic&alpn=h3#tuicv5"
+    url="tuic://$uuid:$passwd@$domain:$port?congestion_control=bbr&udp_relay_mode=quic&alpn=h3#tuic"
     echo ${url} > /root/tuic/url.txt
 
     cat << EOF > /root/tuic/clash-meta.yaml
@@ -349,9 +349,9 @@ stoptuic(){
 tuicswitch(){
     yellow "请选择你需要的操作："
     echo ""
-    echo -e " ${GREEN}1.${PLAIN} 启动 Tuic"
-    echo -e " ${GREEN}2.${PLAIN} 关闭 Tuic"
-    echo -e " ${GREEN}3.${PLAIN} 重启 Tuic"
+    echo -e " ${GREEN}1.启动${PLAIN} "
+    echo -e " ${GREEN}2.关闭${PLAIN} "
+    echo -e " ${GREEN}3.重启${PLAIN} "
     echo ""
     read -rp "请输入选项 [0-3]: " switchInput
     case $switchInput in
@@ -423,12 +423,12 @@ changepasswd(){
 }
 
 changeconf(){
-        green "Tuic V5 配置变更选择如下:"
-        echo -e " ${GREEN}1.${PLAIN} 修改端口"
-        echo -e " ${GREEN}2.${PLAIN} 修改 UUID"
-        echo -e " ${GREEN}3.${PLAIN} 修改密码"
+        green ""
+        echo -e " ${YELLOW}1.修改端口${PLAIN} "
+        echo -e " ${YELLOW}2.修改UUID${PLAIN} "
+        echo -e " ${YELLOW}3.修改密码${PLAIN} "
         echo ""
-        read -p " 请选择操作 [1-3]：" confAnswer
+        read -p "选择 [1-3]：" confAnswer
         case $confAnswer in
             1 ) changeport ;;
             2 ) changeuuid ;;
@@ -438,11 +438,15 @@ changeconf(){
 }
 
 showconf(){
+    yellow
     green "客户端配置文件 tuic-client.json 内容如下，并保存到 /root/tuic/tuic-client.json"
     yellow "$(cat /root/tuic/tuic-client.json)"
+    yellow
     green "Clash Meta 客户端配置文件已保存到 /root/tuic/clash-meta.yaml"
+    yellow
     yellow "Tuic 节点配置明文如下，并保存到 /root/tuic/tuic.txt"
     yellow "$(cat /root/tuic/tuic.txt)"
+    yellow
     green "Tuic 节点链接如下，并保存到 /root/tuic/url.txt"
     yellow "$(cat /root/tuic/url.txt)"
 }
@@ -450,14 +454,14 @@ showconf(){
 menu() {
     clear
     echo ""
-    echo -e "${yellow} -------------Tuic 一键安装脚本 -------------${PLAIN}"
+    echo -e "${YELLOW} -------------Tuic 一键安装脚本 -------------${PLAIN}"
     echo ""
-    echo -e " ${GREEN}1.${PLAIN} 安装 Tuic V5"
-    echo -e " ${GREEN}2.${PLAIN} 卸载 Tuic V5"
-    echo -e " ${GREEN}3.${PLAIN} 关闭、启动、重启 Tuic"
-    echo -e " ${GREEN}4.${PLAIN} 修改 Tuic 配置"
-    echo -e " ${GREEN}5.${PLAIN} 显示 Tuic 配置文件"
-    echo -e " ${GREEN}0.${PLAIN} 退出脚本"
+    echo -e " ${YELLOW}1.安装${PLAIN} "
+    echo -e " ${YELLOW}2.卸载${PLAIN} "
+    echo -e " ${YELLOW}3.关闭.启动.重启${PLAIN} "
+    echo -e " ${YELLOW}4.修改配置${PLAIN} "
+    echo -e " ${YELLOW}5.查看配置${PLAIN} "
+    echo -e " ${YELLOW}0.退出脚本${PLAIN} "
     echo ""
     read -rp "请输入选项 [0-5]: " menuInput
     case $menuInput in
