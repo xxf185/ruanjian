@@ -14,7 +14,6 @@ bash <(curl -Ls https://raw.githubusercontent.com/xxf185/x-ui/master/install.sh)
 
 IP＋端口
 xxx.xxx.xxx.xxx:15657
-xxx.xxx.xxx
 
 api令牌 
 20f0ff7794cbcec1ee99736ddfdd9aa2105c6  
