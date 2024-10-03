@@ -3,7 +3,7 @@
 
 # https://github.com/xxf185/openvpn-install
 #
-# Copyright (c) 2013 xxf. Released under the MIT License.
+# Copyright (c) 2024 xxf. Released under the MIT License.
 
 
 # Detect Debian users running the script with "sh" instead of bash
