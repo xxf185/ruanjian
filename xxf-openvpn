@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-# https://github.com/xxf185/openvpn-install
+# https://github.com/xxf185/openvpn
 #
 # Copyright (c) 2024 xxf. Released under the MIT License.
 
