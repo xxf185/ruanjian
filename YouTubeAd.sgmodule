@@ -2,7 +2,7 @@
 #!desc =支持pip，后台播放, youtube and youtube music
 #!author = Maasea 
 #!homepage=https://whatshub.top
-#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+#!icon = https://raw.githubusercontent.com/xxf185/ruanjian/master/YouTubeAd.sgmodule
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
