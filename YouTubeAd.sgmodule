@@ -1,8 +1,14 @@
+#!url=https://whatshub.top/module/YouTubeAd.sgmodule
 #!name = YouTube去广告
-#!desc =支持pip，后台播放, youtube and youtube music
+
+#!desc =支持pip，后台播放
+
 #!author = Maasea 
+
 #!homepage=https://whatshub.top
-#!icon = https://raw.githubusercontent.com/xxf185/ruanjian/refs/heads/main/YouTubeAd.sgmodule
+
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
