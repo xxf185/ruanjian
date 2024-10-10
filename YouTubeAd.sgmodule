@@ -28,6 +28,7 @@ youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 
 [URL Rewrite]
 ^https?:\/\/[\w-]+\.googleadservices\.com\/initplayback.+&oad REJECT-200
+^https?:\/\/[\w-]+\.googleadservices\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad _ reject-200
 (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
 ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad _ reject-200
 ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads _ reject-200
