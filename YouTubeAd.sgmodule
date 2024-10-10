@@ -37,6 +37,12 @@ youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 ^https?:\/\/(www|s)\.youtube\.com\/((dclk_video_ads|videoplayback\?)).+&oad _ reject-200
 ^https?:\/\//(www|s)\.googleadservices\.com\/api\/stats\/qoe\?adcontext _ reject-200
 ^https?:\/\/(www|s)\.googleadservices\.com\/api\/stats\/ads _ reject-200
+(^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
+^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad - reject
+^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v\d\/player\/ad_break - reject
+^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads - reject
+^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) - reject
+^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext - reject
 
 [MITM]
 hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com, googleadservices.com
