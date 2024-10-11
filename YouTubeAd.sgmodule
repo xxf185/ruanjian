@@ -31,4 +31,4 @@ youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad REJECT-200
 
 [MITM]
-hostname = %APPEND% *.googlevideo.com, google.com, youtubei.googleapis.com, googleads.g.doubleclick.net
+hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com, google.com, googleads.g.doubleclick.net
