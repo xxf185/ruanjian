@@ -18,7 +18,9 @@
 ########################################
 
 [Rule]
+AND,((DOMAIN-SUFFIX,google.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
+AND,((DOMAIN-SUFFIX,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN-SUFFIX,googleads.g.doubleclick.net), (PROTOCOL,UDP)),REJECT
 
 [Script]
@@ -29,4 +31,4 @@ youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad REJECT-200
 
 [MITM]
-hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com, googleads.g.doubleclick.net
+hostname = %APPEND% *.googlevideo.com, google.com, youtubei.googleapis.com, googleads.g.doubleclick.net
