@@ -21,8 +21,8 @@
 AND,((DOMAIN-SUFFIX,youtube.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN-SUFFIX,google.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
-AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
-AND,((DOMAIN,googleads.g.doubleclick.net), (PROTOCOL,UDP)),REJECT
+AND,((DOMAIN-SUFFIX,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
+AND,((DOMAIN-SUFFIX,googleads.g.doubleclick.net), (PROTOCOL,UDP)),REJECT
 
 [Script]
 youtube.request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://raw.githubusercontent.com/xxf185/youtube/refs/heads/main/youtube.request.preview.js
