@@ -18,8 +18,7 @@
 ########################################
 
 [Rule]
-AND,((DOMAIN-SUFFIX,youtube.com), (PROTOCOL,UDP)),REJECT
-AND,((DOMAIN-SUFFIX,google.com), (PROTOCOL,UDP)),REJECT
+
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN-SUFFIX,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN-SUFFIX,googleads.g.doubleclick.net), (PROTOCOL,UDP)),REJECT
