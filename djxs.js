@@ -1,4 +1,4 @@
-#!url=https://raw.githubusercontent.com/xxf185/ruanjian/refs/heads/main/YouTubeAd.sgmodule
+#!url=https://raw.githubusercontent.com/xxf185/ruanjian/refs/heads/main/djxs.js
 
 #!name=得间小说
 #!desc=得间小说解锁
