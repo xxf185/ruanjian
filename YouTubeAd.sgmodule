@@ -1,6 +1,6 @@
 #!url=https://raw.githubusercontent.com/xxf185/ruanjian/refs/heads/main/YouTubeAd.sgmodule
-#!name = YouTube(music去广告)
-#!desc =支持pip，后台播放
+#!name=YouTube(music去广告)
+#!desc=支持pip，后台播放
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
