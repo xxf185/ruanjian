@@ -1,3 +1,4 @@
+```
 racknerd-c——142.171.198.189——r.xxf186.asia
 
 
@@ -150,3 +151,4 @@ netstat -lnpt|grep 80
 netstat -lnpt|grep 443
 
 kill -s 9 xxx
+```
